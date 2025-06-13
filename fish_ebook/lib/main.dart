@@ -7,6 +7,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await BookmarkModel.initPrefs();
   runApp(
+    
     ChangeNotifierProvider(
       create: (_) => BookmarkModel(prefs),
       child: const FishApp(),
@@ -21,6 +22,7 @@ class FishApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fish eBook',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const HomePage(),
     );
